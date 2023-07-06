@@ -30,7 +30,7 @@ export default function Navbar({ sections }) {
   }, [sections]);
 
   return (
-    <nav className=" w-20 h-24 flex-col justify-end items-center main-nav relative">
+    <nav className="main-nav">
       {sections.map((section) => (
         <NavHashLink
           smooth
