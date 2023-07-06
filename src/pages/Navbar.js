@@ -1,18 +1,49 @@
-import React from "react";
-import { Link } from 'react-scroll';
+import React, { useState, useEffect, useRef } from "react";
+import { NavHashLink } from "react-router-hash-link";
 
-export default function Navbar() {
+export default function Navbar({ sections }) {
+  const [activeTab, setActiveTab] = useState("");
+  const observer = useRef(null);
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 } // Adjust the threshold value as per your requirement
+    );
+
+    sections.forEach((section) => {
+      const target = document.querySelector(`#${section.id}`);
+      if (target) {
+        observer.current.observe(target);
+      }
+    });
+
+    return () => {
+      observer.current.disconnect();
+    };
+  }, [sections]);
+
   return (
-    <nav className="main-nav">
-      <Link to="#home" spy={true} smooth={true} offset={50} duration={500} className="nav-item">
-        Home
-      </Link>
-      <Link to="#projects" spy={true} smooth={true} offset={50} duration={500} className="nav-item">
-        Projects
-      </Link>
-      <Link to="#about" spy={true} smooth={true} offset={50} duration={500} className="nav-item" >
-        About
-      </Link>
+    <nav className=" w-20 h-24 flex-col justify-end items-center main-nav relative">
+      {sections.map((section) => (
+        <NavHashLink
+          smooth
+          key={section.id}
+          className={`flex items-center justify-center text-white tracking-widest my-12   w-xl  w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 transform -rotate-90 origin-center hover:text-yellow-400 ${
+            activeTab === section.id ? "bg-rose-600 text-white" : ""
+          }`}
+          to={`#${section.id}`}
+          activeClassName="selected"
+        >
+          {section.label}
+        </NavHashLink>
+      ))}
     </nav>
   );
 }
