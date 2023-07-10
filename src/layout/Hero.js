@@ -5,9 +5,9 @@ import Projects from "../pages/Projects";
 
 export default function Hero() {
   return (
-    <div className="main-hero-section">
+    <div>
       <Topbar />
-      <main className="main-hero-section-content overflow-x-scroll scrollbar-none">
+      <main className="flex overflow-x-scroll scrollbar-none mt-25vh">
         <Home />
         <Projects />
       </main>
