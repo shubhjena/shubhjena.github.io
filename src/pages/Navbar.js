@@ -35,7 +35,7 @@ export default function Navbar({ sections }) {
         <NavHashLink
           smooth
           key={section.id}
-          className={`flex items-center justify-center text-white tracking-widest my-12   w-xl  w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 transform -rotate-90 origin-center hover:text-yellow-400 ${
+          className={`flex items-center justify-center text-white tracking-widest my-12  w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 transform -rotate-90 origin-center hover:text-yellow-400 ${
             activeTab === section.id ? "bg-rose-600 text-white" : ""
           }`}
           to={`#${section.id}`}
