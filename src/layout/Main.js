@@ -34,7 +34,7 @@ export default function Main() {
     <div className="App flex">
       <Navbar sections={sections} />
       <div
-        className="main-layout overflow-x-scroll scrollbar-none"
+        className="flex overflow-x-scroll scrollbar-none"
         ref={scrollContainerRef}
       >
         <Hero />
