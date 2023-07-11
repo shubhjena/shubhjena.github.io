@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Home() {
+  console.log("Home")
   return (
     <div className="home-main-text" id="home">
       <p className="text-box">
