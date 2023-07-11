@@ -25,6 +25,7 @@ export default function About() {
           sectionThis is about sectionThis is about sectionThis is about
           sectionThis is about sectionThis is about sectionThis is about
           sectionThis is about sectionThis is about sectionThis is about section
+          Ut adipisicing voluptate veniam dolor cupidatat adipisicing minim ex. Officia deserunt nulla adipisicing ea voluptate sit. Ex nisi adipisicing Lorem pariatur deserunt sit velit aliquip laborum nostrud sit exercitation cillum Lorem. Ipsum eiusmod commodo aliquip veniam pariatur duis. Occaecat veniam laboris ex irure sit cupidatat veniam eiusmod sit deserunt in. Ea commodo mollit ut cupidatat anim cillum culpa.
         </div>
       </div>
     </div>
