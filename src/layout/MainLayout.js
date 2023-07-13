@@ -1,9 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import About from "../pages/About";
-import Navbar from "../pages/Navbar";
-import Hero from "./Hero";
+import About from "../components/About";
+import Navbar from "../components/Navbar";
+import NameBar from "../components/NameBar";
+import Home from "../components/Home";
+import Projects from "../components/Projects";
 
-export default function Main() {
+/*Main Layout */
+
+export default function MainLayout() {
+  console.log("Main");
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
@@ -31,14 +36,18 @@ export default function Main() {
   ];
 
   return (
-    <div className="App flex">
+    <div className="flex bg-primary text-black text-center m-0 p-0 ">
       <Navbar sections={sections} />
       <div
         className="flex overflow-x-scroll scrollbar-none"
         ref={scrollContainerRef}
       >
-        <Hero />
-        <About />
+        <NameBar />
+        <div className="flex">
+          <Home />
+          <Projects />
+          <About />
+        </div>
       </div>
     </div>
   );
