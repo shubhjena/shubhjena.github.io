@@ -1,21 +1,27 @@
-import "./App.css";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import Notfound from "./pages/Notfound";
-import Main from "./layout/Main";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import ErrorPage from "./components/ErrorPage";
+import MainLayout from "./layout/MainLayout";
 import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-    <Main/>
-      <Route path="#home"><Home /></Route>
-      <Route path="#projects"><Projects /></Route>
-      <Route path="#about"><About /></Route>
-      <Route path="*" element={<Notfound />} />
+      <MainLayout />
+      <Route path="#home">
+        <Home />
+      </Route>
+      <Route path="#projects">
+        <Projects />
+      </Route>
+      <Route path="#about">
+        <About />
+      </Route>
+      {/* <Route path="*">
+        <ErrorPage />
+      </Route> */}
     </BrowserRouter>
-    
   );
 }
 
