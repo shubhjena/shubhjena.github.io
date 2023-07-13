@@ -16,11 +16,6 @@ code {
     monospace;
 }
 
-.w-scr-95{
- min-width: 95vw;
+.last-name-info {
+  font-family: "Bilbo Swash Caps", cursive;
 }
-
-.mt-25vh{
-margin-top: 25vh;
-}
-
