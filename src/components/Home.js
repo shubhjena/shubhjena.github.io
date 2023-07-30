@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   console.log("Home");
@@ -24,6 +26,12 @@ export default function Home() {
           lives, and I am dedicated to leveraging my skills to make a positive
           impact.
         </p>
+        <br/>
+        <span className="inline-block font-mono text-lg hover:bg-tertiary opacity-75 hover:opacity-100 select-none">
+          <a href="https://github.com/shubhjena" target="blank">
+            <FontAwesomeIcon icon={faGithubAlt} />_shubhjena
+          </a>
+        </span>
       </div>
     </div>
   );
