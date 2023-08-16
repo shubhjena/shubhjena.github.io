@@ -21,7 +21,7 @@ export default function About() {
       id="about"
     >
       {/*Jena Name bar*/}
-      <div className="mt-24 text-8xl font-normal tracking-wider text-left indent-96 last-name-info ">
+      <div className="mt-24 text-8xl font-normal tracking-wider text-left indent-96 last-name-info select-none">
         Jena
       </div>
 
