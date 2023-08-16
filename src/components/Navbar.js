@@ -31,20 +31,35 @@ export default function Navbar({ sections }) {
   }, [sections]);
 
   return (
-    <nav className="fixed bg-secondary pb-6 w-20 h-screen flex flex-col justify-end items-center z-20">
-      {sections.map((section) => (
-        <NavHashLink
-          smooth
-          key={section.id}
-          className={`flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 transform -rotate-90 origin-center hover:text-tertiary ${
-            activeTab === section.id ? "bg-accent text-primary" : ""
-          }`}
-          to={`#${section.id}`}
-          activeClassName="selected"
-        >
-          {section.label}
-        </NavHashLink>
-      ))}
-    </nav>
+    <>
+      <nav className="flex md:hidden z-20 bg-primary">
+        {sections.map((section) => (
+          <NavHashLink
+            smooth
+            key={section.id}
+            className="flex items-center justify-center w-36 h-12 text-lg cursor-pointer transition duration-75 hover:text-tertiary"
+            to={`/${section.id}`}
+            activeClassName="selected"
+          >
+            {section.label}
+          </NavHashLink>
+        ))}
+      </nav>
+      <nav className="fixed bg-secondary pb-6 w-20 h-screen hidden md:flex flex-col justify-end items-center z-20">
+        {sections.map((section) => (
+          <NavHashLink
+            smooth
+            key={section.id}
+            className={`flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 transform -rotate-90 origin-center hover:text-tertiary ${
+              activeTab === section.id ? "bg-accent text-primary" : ""
+            }`}
+            to={`#${section.id}`}
+            activeClassName="selected"
+          >
+            {section.label}
+          </NavHashLink>
+        ))}
+      </nav>
+    </>
   );
 }

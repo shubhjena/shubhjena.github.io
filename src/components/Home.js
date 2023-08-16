@@ -6,10 +6,10 @@ export default function Home() {
   console.log("Home");
   return (
     <div
-      className="bg-secondary h-screen w-screen flex justify-center  pt-48"
+      className="bg-secondary h-auto md:w-screen flex justify-center  md:pt-48"
       id="home"
     >
-      <div className="p-5 max-w-3xl text-xl font-light text-justify">
+      <div className="p-5 w-5/6 max-w-3xl text-xl font-light text-justify">
         <p>
           I'm a passionate software developer based in Hyderabad, India, with a
           strong academic background as a postgraduate from IIT Madras. My deep

@@ -17,28 +17,28 @@ export default function About() {
 
   return (
     <div
-      className="flex flex-col w-screen max-h-screen bg-tertiary z-10 pl-20"
+      className="flex flex-col h-screen w-screen bg-tertiary z-10 md:pl-20"
       id="about"
     >
       {/*Jena Name bar*/}
-      <div className="mt-24 text-8xl font-normal tracking-wider text-left indent-96 last-name-info select-none">
+      <div className="hidden md:block mt-24 text-8xl font-normal tracking-wider text-left indent-96 last-name-info select-none">
         Jena
       </div>
 
       {/* body section */}
-      <div className="flex items-center justify-center pt-8">
+      <div className="flex flex-wrap md:flex-nowrap items-center justify-center pt-8">
         {/* Profile picture */}
         <div className="pt-12 min-w-fit">
           <img
             src={profilePic}
-            className=" h-72 rounded-full mx-14"
+            className="h-28 md:h-72 rounded-full md:mx-14"
             alt="profile picture"
           />
         </div>
 
         {/* Skills section */}
         <div className="">
-          <h1 className="text-xl font-light m-5 tracking-widest uppercase ">
+          <h1 className="text-xl font-light p-5 tracking-widest uppercase">
             My Skills
           </h1>
           <ul className="flex flex-wrap gap-4 w-72  justify-center">

@@ -12,10 +12,19 @@ function App() {
       <Route path="#home">
         <Home />
       </Route>
+      <Route path="/home">
+        <Home />
+      </Route>
       <Route path="#projects">
         <Projects />
       </Route>
+      <Route path="/projects">
+        <Projects />
+      </Route>
       <Route path="#about">
+        <About />
+      </Route>
+      <Route path="/about">
         <About />
       </Route>
       {/* <Route path="*">

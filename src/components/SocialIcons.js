@@ -11,7 +11,7 @@ export default function SocialIcons() {
   const iconStyle = `text-4xl text-accent px-8 py-8 hover:text-primary hover:scale-125 transition-all duration-300`;
 
   return (
-    <div className="flex sc flex-wrap justify-center items-center w-screen">
+    <div className="flex flex-wrap justify-center items-center w-screen">
       <a className={iconStyle} href="mailto:shubh.jena@gmail.com">
         <FontAwesomeIcon icon={faEnvelopeOpenText} />
       </a>

@@ -45,11 +45,11 @@ export default function Projects() {
   ];
   return (
     <div
-      className="flex w-screen max-h-screen justify-center bg-primary pt-48"
+      className="flex w-screen  md:h-screen justify-center md:justify-end bg-primary"
       id="projects"
     >
       {/* Project list container */}
-      <div className=" flex-col flex-wrap bg-transparent p-7 overflow-y-hidden">
+      <div className=" flex-col flex-wrap bg-transparent p-7">
         {projects
           .slice(0)
           .reverse()

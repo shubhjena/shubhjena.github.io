@@ -36,19 +36,25 @@ export default function MainLayout() {
   ];
 
   return (
-    <div className="flex bg-primary text-black text-center m-0 p-0 ">
-      <Navbar sections={sections} />
-      <div
-        className="flex overflow-x-scroll scrollbar-none"
-        ref={scrollContainerRef}
-      >
-        <NameBar />
-        <div className="flex">
-          <Home />
-          <Projects />
-          <About />
+    <>
+      <div className="md:hidden">
+        <NameBar/>
+        <Navbar sections={sections} />
+      </div>
+      <div className="hidden md:flex bg-primary text-black text-center m-0 p-0 ">
+        <Navbar sections={sections} />
+        <div
+          className="flex overflow-x-scroll scrollbar-none"
+          ref={scrollContainerRef}
+        >
+          <NameBar />
+          <div className="flex">
+            <Home />
+            <Projects />
+            <About />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

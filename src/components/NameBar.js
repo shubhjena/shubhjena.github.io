@@ -10,11 +10,11 @@ import { NavHashLink } from "react-router-hash-link";
 export default function NameBar() {
   console.log("NameBar");
   return (
-    <div className="flex justify-start mt-24">
-      <div className="fixed pl-24 z-20">
+    <div className="flex justify-start mt-2 md:mt-24">
+      <div className="md:fixed pl-4 md:pl-24 z-20">
         <div className="flex flex-col">
           <NavHashLink smooth to={`#home`}>
-            <span className="text-6xl font-normal font-serif tracking-wider select-none cursor-pointer">
+            <span className="text-3xl md:text-6xl font-normal font-serif tracking-wider select-none cursor-pointer">
               Shubhashish
             </span>
           </NavHashLink>
@@ -25,9 +25,9 @@ export default function NameBar() {
           </span>
         </div>
       </div>
-      <div className="fixed pl-24 indent-96">
+      <div className="md:fixed pl-1.5 md:pl-24  md:indent-96">
         <NavHashLink smooth to={`#home`}>
-          <span className="text-6xl font-normal font-serif tracking-wider select-none cursor-pointer">
+          <span className="text-3xl md:text-6xl font-normal font-serif tracking-wider select-none cursor-pointer">
             Jena
           </span>
         </NavHashLink>
