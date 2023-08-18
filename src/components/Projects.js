@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Projects() {
-  console.log("Projects");
 
   // array to store the project information
   const projects = [

@@ -5,6 +5,7 @@ import Projects from "../components/Projects";
 import About from "../components/About";
 import Navbar from "../components/Navbar";
 import NameBar from "../components/NameBar";
+import Progressbar from "../components/Progressbar";
 
 function HorizoantalLayout() {
   const sections = [
@@ -16,7 +17,7 @@ function HorizoantalLayout() {
 
   return (
     <div className="flex overflow-y-scroll">
-      <div class="home flex scrollbar-none">
+      <div className="home flex scrollbar-none">
         <div className="slides md:flex text-center">
           <Home />
           <Projects />
@@ -27,6 +28,7 @@ function HorizoantalLayout() {
         <NameBar />
         <Navbar sections={sections} />
       </div>
+        <Progressbar/>
     </div>
   );
 }

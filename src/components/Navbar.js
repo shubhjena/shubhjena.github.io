@@ -11,7 +11,6 @@ export default function Navbar({ sections }) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("Intersecting:", entry.target.id); // Debugging
             setActiveTab(entry.target.id);
           }
         });

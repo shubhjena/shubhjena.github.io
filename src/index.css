@@ -23,11 +23,3 @@ code {
 .last-name-info {
   font-family: "Bilbo Swash Caps", cursive;
 }
-
-/* @media (max-width: 768px) {
-  .selected {
-    --tw-text-opacity: 1;
-    color: rgb(66 72 116 / var(--tw-text-opacity));
-    font-weight: 700;
-  }
-} */

@@ -3,7 +3,6 @@ import profilePic from "../assets/Profile picture.jpeg";
 import SocialIcons from "./SocialIcons";
 
 export default function About() {
-  console.log("About");
 
   const skills = [
     "JAVA",
