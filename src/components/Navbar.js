@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { a } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
 export default function Navbar({ sections }) {
-  console.log("Navbar");
   const [activeTab, setActiveTab] = useState("");
   const observer = useRef(null);
 
@@ -11,6 +11,7 @@ export default function Navbar({ sections }) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log("Intersecting:", entry.target.id); // Debugging
             setActiveTab(entry.target.id);
           }
         });
@@ -32,13 +33,14 @@ export default function Navbar({ sections }) {
 
   return (
     <>
-      <nav className="flex md:hidden z-20 bg-primary">
+      <nav className="fixed flex w-screen md:hidden backdrop-blur-sm">
         {sections.map((section) => (
           <NavHashLink
             smooth
             key={section.id}
-            className="flex items-center justify-center w-36 h-12 text-lg cursor-pointer transition duration-75 hover:text-tertiary"
-            to={`/${section.id}`}
+            className={`flex items-center justify-center w-28 h-12 text-lg cursor-pointer transition duration-400 md:hover:text-tertiary  ${
+              activeTab === section.id ? "text-accent bg-gradient-to-r from-transparent via-white to-transparent font-bold rounded" : ""}`}
+            to={`#${section.id}`}
             activeClassName="selected"
           >
             {section.label}
@@ -50,7 +52,7 @@ export default function Navbar({ sections }) {
           <NavHashLink
             smooth
             key={section.id}
-            className={`flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 transform -rotate-90 origin-center hover:text-tertiary ${
+            className={`flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 -rotate-90 origin-center hover:text-tertiary ${
               activeTab === section.id ? "bg-accent text-primary" : ""
             }`}
             to={`#${section.id}`}

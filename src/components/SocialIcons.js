@@ -8,7 +8,7 @@ import {
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
 export default function SocialIcons() {
-  const iconStyle = `text-4xl text-accent px-8 py-8 hover:text-primary hover:scale-125 transition-all duration-300`;
+  const iconStyle = `text-3xl md:text-4xl text-accent px-4 md:px-6 lg:px-8 py-8 hover:text-primary hover:scale-125 transition-all duration-300`;
 
   return (
     <div className="flex flex-wrap justify-center items-center w-screen">
