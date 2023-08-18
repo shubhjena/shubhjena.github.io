@@ -16,8 +16,8 @@ function HorizoantalLayout() {
   ];
 
   return (
-    <div className="flex overflow-y-scroll">
-      <div className="home flex scrollbar-none">
+    <div className="flex overflow-y-scroll ">
+      <div className="home flex scrollbar-none ">
         <div className="slides md:flex text-center">
           <Home />
           <Projects />

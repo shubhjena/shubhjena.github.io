@@ -32,7 +32,7 @@ export default function Navbar({ sections }) {
 
   return (
     <>
-      <nav className="fixed flex w-screen md:hidden backdrop-blur-sm">
+      <nav className="fixed flex w-screen md:hidden bg-secondary">
         {sections.map((section) => (
           <NavHashLink
             smooth

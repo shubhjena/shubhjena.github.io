@@ -9,7 +9,7 @@ export default function Home() {
         className="bg-secondary min-h-screen md:w-screen flex justify-center pt-24 md:pt-48"
         id="home"
       >
-        <div className="p-5 w-5/6 max-w-3xl text-xl font-light text-justify">
+        <div className="p-8 md:w-5/6 max-w-3xl text-xl font-light text-justify">
           <p>
             I'm a passionate software developer based in Hyderabad, India, with
             a strong academic background as a postgraduate from IIT Madras. My

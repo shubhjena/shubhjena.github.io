@@ -57,10 +57,10 @@ export default function Projects() {
             // Individual project card
             <a key={index} href={project.link} target="blank">
               <div className="flex flex-col px-10 py-3 justify-center transition duration-400  bg-opacity-75 rounded-xl hover:bg-gradient-to-r from-transparent via-secondary to-transparent hover:translate-y-0.5 ">
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-light ">
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold md:font-light ">
                   {project.title}
                 </h1>
-                <p className=" text-lg italic font-light">{project.desc}</p>
+                <p className="text-base md:text-lg italic font-light">{project.desc}</p>
               </div>
             </a>
           ))}

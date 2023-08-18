@@ -6,7 +6,7 @@ function Progressbar() {
   // Function to update scroll progress
   const updateScrollProgress = () => {
     const windowHeight = window.innerHeight;
-    const fullHeight = document.body.scrollHeight - windowHeight;
+    const fullHeight = document.body.clientHeight - windowHeight;
     const scrollY = window.scrollY;
     const progress = (scrollY / fullHeight) * 100;
     setScrollProgress(progress);
@@ -14,9 +14,9 @@ function Progressbar() {
 
   // scroll event listener
   useEffect(() => {
-    window.addEventListener("scroll", updateScrollProgress);
+    window.addEventListener("wheel", updateScrollProgress);
     return () => {
-      window.removeEventListener("scroll", updateScrollProgress);
+      window.removeEventListener("wheel", updateScrollProgress);
     };
   }, []);
 

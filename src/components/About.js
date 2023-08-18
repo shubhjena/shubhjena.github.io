@@ -20,7 +20,7 @@ export default function About() {
       id="about"
     >
       {/* body section */}
-      <div className="flex flex-wrap md:flex-nowrap items-center justify-center pt-8 mt-2 md:mt-40">
+      <div className="flex flex-wrap md:flex-nowrap items-center justify-center pt-16 mt-2 md:mt-40">
         {/* Profile picture */}
         <div className="pt-12 min-w-fit">
           <img

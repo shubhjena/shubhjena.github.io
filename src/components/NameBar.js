@@ -9,7 +9,7 @@ import { NavHashLink } from "react-router-hash-link";
 
 export default function NameBar() {
   return (
-    <div className="md:fixed flex justify-start pt-2 md:ml-20 w-screen md:w-auto md:mt-24 backdrop-blur-sm">
+    <div className="md:fixed flex justify-start pt-2 md:ml-20 w-screen md:w-auto md:mt-24 backdrop-blur">
       <div className=" pl-4">
         <div className="flex flex-col">
           <NavHashLink smooth to={`#home`}>
