@@ -1,5 +1,5 @@
 import React from "react";
-import "./HorizoantalLayout.css";
+import "./HorizontalLayout.css";
 import Home from "../components/Home";
 import Projects from "../components/Projects";
 import About from "../components/About";
@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import NameBar from "../components/NameBar";
 import Progressbar from "../components/Progressbar";
 
-function HorizoantalLayout() {
+function HorizontalLayout() {
   const sections = [
     { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
@@ -16,21 +16,23 @@ function HorizoantalLayout() {
   ];
 
   return (
-    <div className="flex overflow-y-scroll ">
-      <div className="home flex scrollbar-none ">
+    <div className="flex overflow-y-scroll">
+      <div className="home scrollable flex scrollbar-none ">
         <div className="slides md:flex text-center">
           <Home />
           <Projects />
-          <About />
+          <div>
+            <About />
+          </div>
         </div>
       </div>
       <div className="fixed">
         <NameBar />
         <Navbar sections={sections} />
       </div>
-        <Progressbar/>
+      <Progressbar />
     </div>
   );
 }
 
-export default HorizoantalLayout;
+export default HorizontalLayout;

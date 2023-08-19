@@ -3,12 +3,12 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import ErrorPage from "./components/ErrorPage";
 import { BrowserRouter, Route } from "react-router-dom";
-import HorizoantalLayout from "./layout/HorizoantalLayout";
+import HorizontalLayout from "./layout/HorizontalLayout";
 
 function App() {
   return (
     <BrowserRouter>
-        <HorizoantalLayout />
+      <HorizontalLayout />
 
       <Route path="#home">
         <Home />
