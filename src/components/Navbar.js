@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { a } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+import { countStore } from "../store/ScrollStatus";
 
 export default function Navbar({ sections }) {
   const [activeTab, setActiveTab] = useState("");
   const observer = useRef(null);
+  const updateScrollProgress = countStore(
+    (state) => state.updateScrollProgress
+  );
 
   useEffect(() => {
     observer.current = new IntersectionObserver(
@@ -37,10 +40,14 @@ export default function Navbar({ sections }) {
           <NavHashLink
             smooth
             key={section.id}
-            className={`flex items-center justify-center w-28 h-12 text-lg cursor-pointer transition duration-400 md:hover:text-tertiary  ${
-              activeTab === section.id ? "text-accent bg-gradient-to-r from-transparent via-white to-transparent font-bold rounded" : ""}`}
+            className={`nav-btn flex items-center justify-center w-28 h-12 text-lg cursor-pointer transition duration-400 md:hover:text-tertiary  ${
+              activeTab === section.id
+                ? "text-accent bg-gradient-to-r from-transparent via-white to-transparent font-bold rounded"
+                : ""
+            }`}
             to={`#${section.id}`}
             activeClassName="selected"
+            onClick={updateScrollProgress}
           >
             {section.label}
           </NavHashLink>
@@ -51,11 +58,12 @@ export default function Navbar({ sections }) {
           <NavHashLink
             smooth
             key={section.id}
-            className={`flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 -rotate-90 origin-center hover:text-tertiary ${
+            className={`nav-btn flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 -rotate-90 origin-center hover:text-tertiary ${
               activeTab === section.id ? "bg-accent text-primary" : ""
             }`}
             to={`#${section.id}`}
             activeClassName="selected"
+            onClick={updateScrollProgress}
           >
             {section.label}
           </NavHashLink>

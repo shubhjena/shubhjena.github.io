@@ -1,47 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { countStore } from "../store/ScrollStatus";
 
 function Progressbar() {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const { scrollProgress, updateScrollProgress } = countStore();
 
-  // Function to update scroll progress
-  const updateScrollProgress = () => {
-    let fullHeight;
-    let scrollAmount;
-
-    //to calculate scroll amount for small scrrens
-    if (window.innerWidth < 768) {
-      const windowHeight = window.innerHeight;
-      fullHeight = document.body.clientHeight - windowHeight;
-      scrollAmount = window.scrollY;
-    }
-    //to calculate scroll amount for md and above screens
-    else {
-      const containerElement = document.querySelector(".home");
-      if (!containerElement) {
-        console.log("Container element not found.");
-        return;
-      }
-      fullHeight =
-        containerElement.scrollHeight - containerElement.offsetHeight;
-      scrollAmount = containerElement.scrollTop;
-    }
-    //setting scroll progress state to calculated progress
-    const progress = (scrollAmount / fullHeight) * 100;
-    setScrollProgress(progress);
-  };
-
-  // scroll event listener
+  // scroll event listener -wheel
   useEffect(() => {
     window.addEventListener("wheel", updateScrollProgress);
+    window.addEventListener("scroll", updateScrollProgress);
     return () => {
       window.removeEventListener("wheel", updateScrollProgress);
+      window.removeEventListener("scroll", updateScrollProgress);
     };
   }, []);
 
+
   return (
-    <div className="fixed bottom-0 left-0 w-full h-1 bg-secondary">
+    <div className="fixed bottom-0 md:top-4 left-0 md:left-3/4 w-full md:w-1/5 h-1.5 md:h-2 bg-transparent md:border border-black">
       <div
-        className="h-full bg-accent transition-width duration-200"
+        className="h-full bg-gradient transition-width duration-200"
         style={{ width: `${scrollProgress}%` }}
       ></div>
     </div>
