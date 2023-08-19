@@ -1,15 +1,10 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavHashLink } from "react-router-hash-link";
 
 export default function NameBar() {
   return (
-    <div className="md:fixed flex justify-start pt-2 md:ml-20 w-screen md:w-auto md:mt-24 backdrop-blur">
+    <div className="flex justify-start md:fixed pt-2 md:ml-20 md:mt-24 w-screen md:w-auto backdrop-blur">
       <div className=" pl-4">
         <div className="flex flex-col">
           <NavHashLink smooth to={`#home`}>

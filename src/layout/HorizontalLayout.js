@@ -8,12 +8,6 @@ import NameBar from "../components/NameBar";
 import Progressbar from "../components/Progressbar";
 
 function HorizontalLayout() {
-  const sections = [
-    { id: "home", label: "Home" },
-    { id: "projects", label: "Projects" },
-    { id: "about", label: "About" },
-    // Add more sections as needed
-  ];
 
   return (
     <div className="flex overflow-y-scroll">
@@ -28,7 +22,7 @@ function HorizontalLayout() {
       </div>
       <div className="fixed">
         <NameBar />
-        <Navbar sections={sections} />
+        <Navbar />
       </div>
       <Progressbar />
     </div>

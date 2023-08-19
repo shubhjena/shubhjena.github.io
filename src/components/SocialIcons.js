@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -7,38 +6,44 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
-export default function SocialIcons() {
-  const iconStyle = `text-3xl md:text-4xl text-accent px-4 md:px-6 lg:px-8 py-8 hover:text-primary hover:scale-125 transition-all duration-300`;
+const iconStyle = `text-3xl md:text-4xl text-accent px-4 md:px-6 lg:px-8 py-8 hover:text-primary hover:scale-125 transition-all duration-300`;
 
+export function EmailIcon() {
   return (
-    <div className="flex flex-wrap justify-center items-center w-screen">
-      <a className={iconStyle} href="mailto:shubh.jena@gmail.com">
-        <FontAwesomeIcon icon={faEnvelopeOpenText} />
-      </a>
+    <a className={iconStyle} href="mailto:shubh.jena@gmail.com">
+      <FontAwesomeIcon icon={faEnvelopeOpenText} />
+    </a>
+  );
+}
 
-      <a
-        className={iconStyle}
-        href="https://github.com/shubhjena"
-        target="blank"
-      >
-        <FontAwesomeIcon icon={faGithub} />
-      </a>
+export function GithubIcon() {
+  return (
+    <a className={iconStyle} href="https://github.com/shubhjena" target="blank">
+      <FontAwesomeIcon icon={faGithub} />
+    </a>
+  );
+}
 
-      <a
-        className={iconStyle}
-        href="https://www.linkedin.com/in/shubhashish-jena-b1145918b"
-        target="blank"
-      >
-        <FontAwesomeIcon icon={faLinkedin} />
-      </a>
+export function LinkedinIcon() {
+  return (
+    <a
+      className={iconStyle}
+      href="https://www.linkedin.com/in/shubhashish-jena-b1145918b"
+      target="blank"
+    >
+      <FontAwesomeIcon icon={faLinkedin} />
+    </a>
+  );
+}
 
-      <a
-        className={iconStyle}
-        href="https://twitter.com/shubh_jena"
-        target="blank"
-      >
-        <FontAwesomeIcon icon={faTwitter} />
-      </a>
-    </div>
+export function TwitterIcon() {
+  return (
+    <a
+      className={iconStyle}
+      href="https://twitter.com/shubh_jena"
+      target="blank"
+    >
+      <FontAwesomeIcon icon={faTwitter} />
+    </a>
   );
 }

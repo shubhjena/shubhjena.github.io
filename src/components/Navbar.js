@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavHashLink } from "react-router-hash-link";
 import { countStore } from "../store/ScrollStatus";
+import { SECTIONS } from "../lib/data";
 
-export default function Navbar({ sections }) {
+export default function Navbar() {
   const [activeTab, setActiveTab] = useState("");
   const observer = useRef(null);
   const updateScrollProgress = countStore(
@@ -18,10 +19,10 @@ export default function Navbar({ sections }) {
           }
         });
       },
-      { threshold: 0.5 } // Adjust the threshold value as per your requirement
+      { threshold: 0.5 } // Adjust the threshold value as per requirement
     );
 
-    sections.forEach((section) => {
+    SECTIONS.forEach((section) => {
       const target = document.querySelector(`#${section.id}`);
       if (target) {
         observer.current.observe(target);
@@ -31,12 +32,13 @@ export default function Navbar({ sections }) {
     return () => {
       observer.current.disconnect();
     };
-  }, [sections]);
+  }, [SECTIONS]);
 
   return (
     <>
+      {/* nav bar for smaller screens */}
       <nav className="fixed flex w-screen md:hidden bg-secondary">
-        {sections.map((section) => (
+        {SECTIONS.map((section) => (
           <NavHashLink
             smooth
             key={section.id}
@@ -46,15 +48,15 @@ export default function Navbar({ sections }) {
                 : ""
             }`}
             to={`#${section.id}`}
-            activeClassName="selected"
             onClick={updateScrollProgress}
           >
             {section.label}
           </NavHashLink>
         ))}
       </nav>
+      {/*nav bar for larger screens */}
       <nav className="fixed bg-secondary pb-6 w-20 h-screen hidden md:flex flex-col justify-end items-center z-20">
-        {sections.map((section) => (
+        {SECTIONS.map((section) => (
           <NavHashLink
             smooth
             key={section.id}
@@ -62,7 +64,6 @@ export default function Navbar({ sections }) {
               activeTab === section.id ? "bg-accent text-primary" : ""
             }`}
             to={`#${section.id}`}
-            activeClassName="selected"
             onClick={updateScrollProgress}
           >
             {section.label}

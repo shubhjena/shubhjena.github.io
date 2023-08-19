@@ -1,19 +1,14 @@
 import React from "react";
 import profilePic from "../assets/Profile picture.jpeg";
-import SocialIcons from "./SocialIcons";
+import SocialIcons, {
+  EmailIcon,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "./SocialIcons";
+import { SKILLS } from "../lib/data";
 
 export default function About() {
-
-  const skills = [
-    "JAVA",
-    "JavaScript",
-    "HTML 5",
-    "CSS 3",
-    "Tailwind CSS",
-    "React",
-    "Git",
-  ];
-
   return (
     <div
       className="flex flex-col min-h-screen w-screen bg-tertiary md:pl-20 "
@@ -35,8 +30,8 @@ export default function About() {
           <h1 className="text-xl font-light p-5 tracking-widest uppercase">
             My Skills
           </h1>
-          <ul className="flex flex-wrap gap-4 w-72  justify-center">
-            {skills.map((skill, index) => (
+          <ul className="flex flex-wrap gap-4 w-72 justify-center">
+            {SKILLS.map((skill, index) => (
               <li
                 key={index}
                 className="py-3 px-8  bg-secondary rounded-3xl text-lg shadow-md font-mono select-none transition duration-300 hover:bg-primary hover:text-xl hover:px-7 hover:shadow-inner hover:translate-y-1 "
@@ -47,12 +42,12 @@ export default function About() {
           </ul>
         </div>
         {/* Social icons */}
-        <SocialIcons />
-
-        {/* Under construction message */}
-        {/* <div className="flex items-center justify-center w-screen text-3xl">
-          👷‍♂️Section under construction! ⚒
-        </div> */}
+        <div className="flex flex-wrap justify-center items-center w-screen">
+          <EmailIcon />
+          <GithubIcon />
+          <TwitterIcon />
+          <LinkedinIcon />
+        </div>
       </div>
     </div>
   );
