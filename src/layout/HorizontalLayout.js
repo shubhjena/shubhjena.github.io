@@ -10,7 +10,7 @@ import Progressbar from "../components/Progressbar";
 function HorizontalLayout() {
 
   return (
-    <div className="flex overflow-y-scroll">
+    <div className="flex">
       <div className="home scrollable flex scrollbar-none ">
         <div className="slides md:flex text-center">
           <Home />

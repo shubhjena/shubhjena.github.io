@@ -10,6 +10,12 @@ export default function Navbar() {
     (state) => state.updateScrollProgress
   );
 
+  const updateProgressBar = () => {
+    for (let i = 1; i <= 28; i++) {
+      (setTimeout(updateScrollProgress,i*25))
+    }
+  };
+
   useEffect(() => {
     observer.current = new IntersectionObserver(
       (entries) => {
@@ -48,7 +54,7 @@ export default function Navbar() {
                 : ""
             }`}
             to={`#${section.id}`}
-            onClick={updateScrollProgress}
+            onClick={updateProgressBar}
           >
             {section.label}
           </NavHashLink>
@@ -64,7 +70,7 @@ export default function Navbar() {
               activeTab === section.id ? "bg-accent text-primary" : ""
             }`}
             to={`#${section.id}`}
-            onClick={updateScrollProgress}
+            onClick={updateProgressBar}
           >
             {section.label}
           </NavHashLink>
