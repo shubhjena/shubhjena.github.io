@@ -6,14 +6,11 @@ function Progressbar() {
 
   // scroll event listener -wheel
   useEffect(() => {
-    window.addEventListener("wheel", updateScrollProgress);
-    window.addEventListener("scroll", updateScrollProgress);
+    const interval = setInterval(updateScrollProgress, 30);
     return () => {
-      window.removeEventListener("wheel", updateScrollProgress);
-      window.removeEventListener("scroll", updateScrollProgress);
+      clearInterval(interval);
     };
-  }, []);
-
+  }, [scrollProgress,updateScrollProgress]);
 
   return (
     <div className="fixed bottom-0 md:top-4 left-0 md:left-3/4 w-full md:w-1/5 h-1.5 md:h-2 bg-transparent md:border border-black">
