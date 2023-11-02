@@ -23,3 +23,8 @@ code {
 .last-name-info {
   font-family: "Bilbo Swash Caps", cursive;
 }
+
+#pdfPage::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+  scrollbar-width: none; /* Firefox */
+}
