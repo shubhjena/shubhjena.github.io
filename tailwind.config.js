@@ -30,7 +30,7 @@ module.exports = {
       // tertiary: "#A6B1E1",
       // accent: "#424874",
       blue:"#0000ff",
-      red:"#FF0000",
+      red:"#00FF00",
     },
   },
   plugins: [require("tailwindcss-no-scrollbar")],

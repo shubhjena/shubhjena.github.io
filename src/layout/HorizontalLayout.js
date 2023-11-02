@@ -6,9 +6,9 @@ import About from "../components/About";
 import Navbar from "../components/Navbar";
 import NameBar from "../components/NameBar";
 import Progressbar from "../components/Progressbar";
+import ResumeButton from "../components/ResumeButton";
 
 function HorizontalLayout() {
-
   return (
     <div className="flex">
       <div className="home scrollable flex scrollbar-none ">
@@ -21,6 +21,7 @@ function HorizontalLayout() {
         </div>
       </div>
       <div className="fixed">
+        <ResumeButton />
         <NameBar />
         <Navbar />
       </div>
