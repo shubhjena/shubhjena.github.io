@@ -6,7 +6,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         "gradient": `linear-gradient(to right, ${theme(
           "colors.blue"
-        )}, ${theme("colors.red")})`,
+        )}, ${theme("colors.green")})`,
       }),
     },
     colors: {
@@ -30,7 +30,8 @@ module.exports = {
       // tertiary: "#A6B1E1",
       // accent: "#424874",
       blue:"#0000ff",
-      red:"#00FF00",
+      green:"#00FF00",
+      red:"#FF0000",
     },
   },
   plugins: [require("tailwindcss-no-scrollbar")],

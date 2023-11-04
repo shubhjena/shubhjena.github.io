@@ -17,6 +17,7 @@ function App() {
         <Route exact path="/">
           <HorizontalLayout />
         </Route>
+        <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   );
