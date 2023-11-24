@@ -16,11 +16,11 @@ const Preloader = () => {
 
   return (
     <div
-      className={`fixed w-screen h-screen bg-secondary flex justify-center items-center transition-opacity ease-in-out duration-1000 delay-300 ${
+      className={`z-50 fixed w-screen h-screen bg-secondary flex justify-center items-center transition-opacity ease-in-out duration-1000 delay-300 ${
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="text-3xl flex gap-3.5">
+      <div className="text-2xl md:text-3xl flex flex-row gap-2 md:gap-3.5">
         <span
           className={`transition-opacity duration-300 ease-out ${
             visible ? "opacity-100" : "opacity-0 "

@@ -7,6 +7,7 @@ import Preloader from "./components/Preloader";
 function App() {
   return (
     <BrowserRouter>
+      <Preloader/>
       <Switch>
         <Route path="/resume">
           <Resume />
@@ -17,7 +18,6 @@ function App() {
         </Route>
         <Route component={ErrorPage} />
       </Switch>
-      <Preloader/>
     </BrowserRouter>
   );
 }
