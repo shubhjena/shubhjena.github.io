@@ -1,11 +1,13 @@
 export const SKILLS = [
   "JAVA",
   "JavaScript",
-  "HTML 5",
-  "CSS 3",
-  "Tailwind CSS",
+  "HTML/CSS",
+  "Spring",
   "React",
-  "Git",
+  "Radix",
+  "Tailwind CSS",
+  "GitHub",
+  "Postman"
 ];
 
 export const SECTIONS = [
