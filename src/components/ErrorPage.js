@@ -14,20 +14,23 @@ export default function Notfound() {
         backgroundPositionY: "center",
       }}
     >
+      {/* Error popup */}
       <div className="w-2/3 sm:w-96 bg-white rounded-lg shadow-md border-2 border-blue m-auto flex flex-col font-mono">
+        {/* Close red button */}
         <div className="flex justify-between bg-blue text-white">
           <div className="font-semibold font-mono p-2">UH-NO, ERROR 404! </div>
           <Link
             to="/"
-            className="flex bg-red border-2 rounded mx-2 my-auto px-1 py-0.5 scale-110"
+            className="flex bg-red hover:scale-105 border-2 rounded mx-2 my-auto px-1 py-0.5 scale-110"
           >
             <FontAwesomeIcon icon={faXmark} className="scale-150" />
           </Link>
         </div>
+        {/* Error message */}
         <div className="m-4 text-gray-700 px-2">
           Sorry, the page you were looking for does not exist.
         </div>
-
+        {/* back button */}
         <Link
           to="/"
           className="mb-4 border-2 rounded border-black hover:border-blue w-fit mx-auto text-black py-1 px-3 hover:bg-blue hover:text-white"
