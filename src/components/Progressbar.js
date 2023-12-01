@@ -13,9 +13,9 @@ function Progressbar() {
   }, [scrollProgress,updateScrollProgress]);
 
   return (
-    <div className="fixed bottom-0 md:bottom-8 left-0 md:left-3/4 w-full md:w-1/5 h-1.5 md:h-2 bg-transparent md:border border-black">
+    <div className="fixed bottom-0 md:bottom-8 right-0 md:right-8 w-full md:w-52 h-1.5 md:h-1 bg-transparent md:border border-accent">
       <div
-        className="h-full bg-gradient transition-width duration-200"
+        className="h-full bg-accent transition-width duration-200"
         style={{ width: `${scrollProgress}%` }}
       ></div>
     </div>
