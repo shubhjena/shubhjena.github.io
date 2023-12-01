@@ -53,11 +53,11 @@ export default function ContactForm() {
     <div className="flex flex-col">
       <h1 className="text-left text-3xl pb-4">contact form</h1>
       <form
-        className="flex flex-col flex-1 gap-1.5 w-96 p-6 bg-white rounded-lg shadow-md"
+        className="flex flex-col flex-1 gap-1.5 md:w-96 p-6 bg-white rounded-lg shadow-md"
         onSubmit={sendEmail}
       >
         <input
-          className="border-gray w-full px-3 py-1.5 mb-4 border rounded"
+          className="border-gray-400 w-full px-3 py-1.5 mb-4 border rounded"
           type="text"
           id="name"
           name="name"
@@ -66,7 +66,7 @@ export default function ContactForm() {
           required
         />
         <input
-          className="border-gray w-full px-3 py-1.5 mb-4 border rounded"
+          className="border-gray-400 w-full px-3 py-1.5 mb-4 border rounded"
           type="email"
           id="email"
           name="email"
@@ -76,28 +76,28 @@ export default function ContactForm() {
         />
 
         <input
-          className="border-gray w-full px-3 py-1.5 mb-4 border rounded"
+          className="border-gray-400 w-full px-3 py-1.5 mb-4 border rounded"
           type="text"
           id="subject"
           name="subject"
           placeholder="How may I help you?"
           onChange={handleChange}
-          maxlength="100"
+          maxLength="100"
           required
         />
         <textarea
-          className="border-gray w-full px-3 py-1.5 mb-4 border rounded flex-1"
+          className="border-gray-400 w-full px-3 py-1.5 mb-4 border rounded flex-1"
           id="message"
           name="message"
           rows="4"
           required
           placeholder="Leave a message and your contact details"
           onChange={handleChange}
-          maxlength="1000"
+          maxLength="1000"
         ></textarea>
 
         <button
-          className="w-auto px-6 py-2 font-bold text-white bg-accent rounded hover:bg-black mx-auto"
+          className="w-auto px-6 py-2 font-bold text-white bg-accent rounded hover:bg-zinc-700 mx-auto transition duration-50"
           type="submit"
         >
           Send
