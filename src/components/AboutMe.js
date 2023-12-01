@@ -4,8 +4,8 @@ import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
 export default function AboutMe() {
   return (
-    <div className="w-screen md:w-2/5 flex flex-col border-s-2 border-white px-10 backdrop-blur-lg">
-      <h1 className="mr-auto text-3xl pt-16 pb-4">about me</h1>
+    <div className="md:w-2/5 flex flex-col border-s-2 border-white pb-10 px-5 md:px-10">
+      <h1 className="mr-auto text-3xl md:pt-16 pb-4">about me</h1>
       <div className="max-w-3xl text-lg font-light text-justify">
         <p>
           I'm a passionate software developer based in Hyderabad, India, with a
@@ -22,10 +22,10 @@ export default function AboutMe() {
           lives, and I am dedicated to leveraging my skills to make a positive
           impact.
         </p>
-        <p className="font-mono text-lg hover:bg-tertiary opacity-75 hover:opacity-100 select-none pt-2">
+        <p className="md:mt-2 text-base font-normal font-sans mr-auto tracking-wider hover:bg-tertiary hover:text-white transform duration-200 select-none w-fit">
           <a href="https://github.com/shubhjena" target="blank">
-            <FontAwesomeIcon icon={faGithubAlt} />
-            _shubhjena
+            <FontAwesomeIcon icon={faGithubAlt} className="pr-1.5" />
+            <span>shubhjena</span>
           </a>
         </p>
       </div>
