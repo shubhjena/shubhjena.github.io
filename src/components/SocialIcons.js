@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
-const iconStyle = `text-3xl md:text-4xl text-accent px-4 md:px-6 lg:px-8 py-8 hover:text-primary hover:scale-125 transition-all duration-300`;
+const iconStyle = `text-accent hover:text-primary transition-all duration-300`;
 
 export function EmailIcon() {
   return (

@@ -15,13 +15,13 @@ export default function Notfound() {
       }}
     >
       {/* Error popup */}
-      <div className="w-2/3 sm:w-96 bg-white rounded-lg shadow-md border-2 border-blue m-auto flex flex-col font-mono">
+      <div className="w-2/3 sm:w-96 bg-white rounded-lg shadow-md border-2 border-blue-700 m-auto flex flex-col font-mono">
         {/* Close red button */}
-        <div className="flex justify-between bg-blue text-white">
+        <div className="flex justify-between bg-blue-700 text-white">
           <div className="font-semibold font-mono p-2">UH-NO, ERROR 404! </div>
           <Link
             to="/"
-            className="flex bg-red hover:scale-105 border-2 rounded mx-2 my-auto px-1 py-0.5 scale-110"
+            className="flex bg-red-500 hover:scale-105 border-2 rounded mx-2 my-auto px-1 py-0.5 scale-110"
           >
             <FontAwesomeIcon icon={faXmark} className="scale-150" />
           </Link>
@@ -33,7 +33,7 @@ export default function Notfound() {
         {/* back button */}
         <Link
           to="/"
-          className="mb-4 border-2 rounded border-black hover:border-blue w-fit mx-auto text-black py-1 px-3 hover:bg-blue hover:text-white"
+          className="mb-4 border-2 rounded border-black hover:border-blue-700 w-fit mx-auto text-black py-1 px-3 hover:bg-blue-700 hover:text-white"
         >
           <button>Go Back</button>
         </Link>

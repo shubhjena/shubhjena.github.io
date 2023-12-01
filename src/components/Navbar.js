@@ -50,12 +50,12 @@ export default function Navbar() {
         ))}
       </nav>
       {/*nav bar for larger screens */}
-      <nav className="fixed bg-secondary pb-6 w-20 h-screen hidden md:flex flex-col justify-end items-center z-20">
+      <nav className="fixed bg-secondary pb-6 w-16 h-screen hidden md:flex flex-col justify-end items-center z-20">
         {SECTIONS.map((section) => (
           <NavHashLink
             smooth
             key={section.id}
-            className={`nav-btn flex items-center justify-center tracking-widest my-12 w-36 h-12 rounded-lg text-xl cursor-pointer transition duration-75 -rotate-90 origin-center hover:text-tertiary ${
+            className={`nav-btn flex items-center justify-center tracking-widest my-12 w-36 py-2 rounded-lg text-md cursor-pointer transition duration-75 -rotate-90 origin-center hover:text-tertiary ${
               activeTab === section.id ? "bg-accent text-primary" : ""
             }`}
             to={`#${section.id}`}

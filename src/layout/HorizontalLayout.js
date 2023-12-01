@@ -1,12 +1,11 @@
 import React from "react";
 import "./HorizontalLayout.css";
-import Home from "../components/Home";
-import Projects from "../components/Projects";
-import About from "../components/About";
+import Projects from "../pages/Projects";
+import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
-import NameBar from "../components/NameBar";
 import Progressbar from "../components/Progressbar";
 import ResumeButton from "../components/ResumeButton";
+import Home from "../pages/Home";
 
 function HorizontalLayout() {
   return (
@@ -16,13 +15,12 @@ function HorizontalLayout() {
           <Home />
           <Projects />
           <div>
-            <About />
+            <Contact />
           </div>
         </div>
       </div>
       <div className="fixed">
         <ResumeButton />
-        <NameBar />
         <Navbar />
       </div>
       <Progressbar />
