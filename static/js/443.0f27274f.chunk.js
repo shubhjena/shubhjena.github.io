@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[443],{443:function(e,a,o){e.exports=o.p+"static/media/vercel.07a394258a56a1ab9437.png"}}]);

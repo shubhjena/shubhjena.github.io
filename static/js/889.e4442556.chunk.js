@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[889],{889:function(e,p,o){e.exports=o.p+"static/media/spring.1493cea40dd5502e5ac7.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[601],{601:function(t,a,e){t.exports=e.p+"static/media/tailwind.73f30aecb3cab55a718b.png"}}]);
