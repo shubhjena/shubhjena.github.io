@@ -38,7 +38,6 @@ export default function ContactForm() {
             subject: "",
             message: "",
           });
-          e.target.reset();
         },
         (error) => {
           alert(
@@ -61,6 +60,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           name="name"
+          value={form.name}
           placeholder="Enter your name"
           onChange={handleChange}
           required
@@ -70,6 +70,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           name="email"
+          value={form.email}
           placeholder="Enter your email"
           onChange={handleChange}
           required
@@ -80,6 +81,7 @@ export default function ContactForm() {
           type="text"
           id="subject"
           name="subject"
+          value={form.subject}
           placeholder="How may I help you?"
           onChange={handleChange}
           maxLength="100"
@@ -89,6 +91,7 @@ export default function ContactForm() {
           className="border-gray-400 w-full px-3 py-1.5 mb-4 border rounded flex-1"
           id="message"
           name="message"
+          value={form.message}
           rows="4"
           required
           placeholder="Leave a message and your contact details"
