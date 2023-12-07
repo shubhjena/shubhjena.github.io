@@ -1,12 +1,12 @@
 import ErrorPage from "./components/ErrorPage";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 import HorizontalLayout from "./layout/HorizontalLayout";
 import Resume from "./components/Resume";
 import Preloader from "./components/Preloader";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/resume">
           <Resume />
@@ -18,7 +18,7 @@ function App() {
         <Route component={ErrorPage} />
       </Switch>
       <Preloader />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
