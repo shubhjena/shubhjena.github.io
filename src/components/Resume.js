@@ -76,8 +76,9 @@ export default function Resume() {
           </div>
           {/* Technical Skills */}
           <div className="mt-4">
-            <h2 className="text-lg font-semibold">Technical Skills</h2>
-            <hr />
+            <h2 className="text-lg font-semibold border-b border-black">
+              Technical Skills
+            </h2>
             <ul className="list-none ml-6 mt-1">
               <li>
                 <b className="font-semibold ">Languages:</b>{" "}
@@ -86,17 +87,17 @@ export default function Resume() {
               <li>
                 <b className="font-semibold">Frameworks:</b>{" "}
                 <span className="text-sm">
-                  Spring, React, Zustand, Tailwind CSS, Radix, Material UI
+                  Spring, React, ContextAPI, Tailwind CSS, Radix, Material UI
                 </span>
               </li>
               <li>
-                <b className="font-semibold">Databases:</b>{" "}
-                <span className="text-sm">MySQL, PostgreSQL</span>
+                <b className="font-semibold">Databases & Tools:</b>{" "}
+                <span className="text-sm">MySQL, PostgreSQL, Hibernate</span>
               </li>
               <li>
                 <b className="font-semibold">Developer Tools:</b>{" "}
                 <span className="text-sm">
-                  Vercel, Postman, GitHub, VS Code, IntelliJ
+                  Vercel, Turborepo, Postman, GitHub, VS Code, IntelliJ
                 </span>
               </li>
             </ul>
@@ -104,8 +105,9 @@ export default function Resume() {
 
           {/* Projects */}
           <div className="mt-3">
-            <h2 className="text-lg font-semibold">Projects</h2>
-            <hr />
+            <h2 className="text-lg font-semibold border-b border-black">
+              Projects
+            </h2>
             <ul className="list-none  ml-6 mr-2 ">
               {RESUME_PROJECTS.map((project, index) => (
                 <li key={index} className="mt-2">
@@ -120,7 +122,7 @@ export default function Resume() {
                       </a>
                     </span>
                   </h3>
-                  <ul className="text-sm list-disc ml-8 space-y-0.5">
+                  <ul className="text-[13px] list-disc ml-8 space-y-0.5">
                     <li>Problem Statement: {project.problemStatement}</li>
                     {project.description.split("#").map((part, i) => (
                       <li key={i}>{part.trim()}</li>
@@ -133,8 +135,9 @@ export default function Resume() {
 
           {/* Experience */}
           <div className="mt-3">
-            <h2 className="text-lg font-semibold">Experience</h2>
-            <hr />
+            <h2 className="text-lg font-semibold border-b border-black">
+              Experience
+            </h2>
             <ul className="list-none ml-6 mr-2 mt-2">
               <li>
                 <div>
@@ -151,7 +154,7 @@ export default function Resume() {
                   </span>
                   <span className="float-right text-sm">Barmer, RJ</span>
                 </p>
-                <ul className="list-disc text-sm ml-8 space-y-0.5">
+                <ul className="list-disc text-[13px] ml-8 space-y-0.5">
                   <li>
                     Coordinated cross-functional teams for timely procurement
                     processes and client billing worth 636 Cr.
@@ -173,8 +176,9 @@ export default function Resume() {
 
           {/* Education */}
           <div className="mt-3">
-            <h2 className="text-lg font-semibold">Education</h2>
-            <hr />
+            <h2 className="text-lg font-semibold border-b border-black">
+              Education
+            </h2>
             <ul className="list-none ml-6">
               <li className="mt-2 mr-2">
                 <h3 className="text-md font-semibold inline-block">

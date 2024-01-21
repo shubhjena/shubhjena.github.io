@@ -2,16 +2,22 @@ export const SKILLS = [
   { name: "React.js", icon: "react.png", strength: "strong" },
   { name: "HTML", icon: "html.png", strength: "strong" },
   { name: "JavaScript", icon: "js.png", strength: "beginner" },
-  { name: "Tailwind CSS", icon: "tailwind.png", strength: "strong" },
   { name: "CSS", icon: "css.png", strength: "beginner" },
+  { name: "Tailwind CSS", icon: "tailwind.png", strength: "strong" },
+  { name: "Socket.io", icon: "socketio.png", strength: "beginner" },
+  { name: "Next.js", icon: "nextjs.png", strength: "strong" },
   { name: "Java", icon: "java.png", strength: "strong" },
-  { name: "MySQL", icon: "mysql.png", strength: "moderate" },
-  { name: "Spring Boot", icon: "springboot.png", strength: "strong" },
-  { name: "Spring", icon: "spring.png", strength: "moderate" },
+  { name: "Spring", icon: "spring.png", strength: "intermediate" },
   { name: "PostgreSQL", icon: "postgresql.png", strength: "beginner" },
-  { name: "Vervel", icon: "vercel.png", strength: "beginner" },
-  { name: "Github", icon: "github.png", strength: "strong" },
+  { name: "Hibernate", icon: "hibernate.png", strength: "strong" },
+  { name: "Spring Boot", icon: "springboot.png", strength: "strong" },
+  { name: "MySQL", icon: "mysql.png", strength: "intermediate" },
+  { name: "Prisma", icon: "prisma.png", strength: "beginner" },
+  { name: "Redis", icon: "redis.png", strength: "beginner" },
+  { name: "Kafka", icon: "kafka.png", strength: "beginner" },
   { name: "Postman", icon: "postman.png", strength: "beginner" },
+  { name: "Github", icon: "github.png", strength: "strong" },
+  { name: "Vervel", icon: "vercel.png", strength: "beginner" },
 ];
 
 export const SECTIONS = [
@@ -57,6 +63,11 @@ export const PROJECTS = [
     desc: "An expense tracker web-app to store and display transactions",
     link: "https://github.com/shubhjena/ExpenseTracker",
   },
+  {
+    title: "Community Chat",
+    desc: "A real-time chat application over a browser window, where users interact using anonymous usernames.",
+    link: "https://github.com/shubhjena/CommunityChat",
+  },
 
   // Add more sections as needed
 ];
@@ -73,15 +84,25 @@ export const RESUME_PROJECTS = [
       "Developed a portfolio website with home, projects, and about sections.#The website showcases my skills, projects, and contact information.",
   },
   {
-    title: "Expense Tracker",
-    technologies: ["React", "Express.js", "Node.js", "MongoDB", "GitHub"],
-    urlText: "/github/expense-tracker",
-    url: "https://github.com/shubhjena/ExpenseTracker",
+    title: "Community Chat",
+    technologies: ["Next, Socket.io, Node.js, Redis, Kafka, Prisma, PostgreSQL"],
+    urlText: "/github/CommunityChat",
+    url: "https://github.com/shubhjena/CommunityChat",
     problemStatement:
-      "Build a web application for recording and tracking expenses.",
+      "Build an application to anonymously chat in real-time.",
     description:
-      "Created an 'Expense Tracker' web app with React.js and Express.js. #Users can add, view, edit, and delete their expense records. It can be used for expense monitoring. #Data is stored and fetched from a MongoDB database using Mongoose.",
+      "Created a ’Community Chat’ web app with Next.js and Node.js, made scalable with Redis and Kafka. #Users can chat in real-time on a web-based chat interface on any of the predefined topics. # Data is stored and fetched from a PostgreSQL database using the Prisma ORM tool.",
   },
+  // {
+  //   title: "Expense Tracker",
+  //   technologies: ["React", "Express.js", "Node.js", "MongoDB", "GitHub"],
+  //   urlText: "/github/expense-tracker",
+  //   url: "https://github.com/shubhjena/ExpenseTracker",
+  //   problemStatement:
+  //     "Build a web application for recording and tracking expenses.",
+  //   description:
+  //     "Created an 'Expense Tracker' web app with React.js and Express.js. #Users can add, view, edit, and delete their expense records. It can be used for expense monitoring. #Data is stored and fetched from a MongoDB database using Mongoose.",
+  // },
   {
     title: "Quiz Application",
     technologies: ["Spring Boot", "Java", "Maven", "PostgreSQL", "REST API"],
