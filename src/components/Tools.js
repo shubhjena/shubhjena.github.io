@@ -28,7 +28,7 @@ export default function Tools() {
   return (
     <div className="bg-primary md:pt-16 md:pr-10 pb-10">
       <h1 className="text-left text-3xl pb-4">tools</h1>
-      <div className="grid grid-cols-4 gap-1.5 md:w-96">
+      <div className="grid grid-cols-5 gap-1.5 md:w-96">
         {skillImages.map((item, index) => (
           <div
             key={index}
