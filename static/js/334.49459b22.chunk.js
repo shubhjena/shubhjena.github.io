@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[334],{334:function(e,t,o){e.exports=o.p+"static/media/hibernate.5583f495b83fd23d9d01.png"}}]);

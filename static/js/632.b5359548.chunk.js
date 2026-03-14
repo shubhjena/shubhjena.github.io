@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[632],{632:function(p,e,o){p.exports=o.p+"static/media/prisma.41b8780508073e8c9a42.png"}}]);

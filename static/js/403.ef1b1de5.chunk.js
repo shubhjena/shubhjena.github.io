@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[403],{403:function(e,o,p){e.exports=p.p+"static/media/postgresql.4d24b888295c57de4abd.png"}}]);
