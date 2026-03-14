@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
-import { RESUME_PROJECTS } from "../lib/data";
+import resumeData from "../lib/resume.json";
 
 const styles = {
   body: {
@@ -11,7 +11,7 @@ const styles = {
   },
   pdfPage: {
     width: "210mm" /* A4 width */,
-    height: "297mm" /* A4 height */,
+    // height: "297mm" /* A4 height */,
     backgroundColor: "#f6f6f6",
   },
 };
@@ -21,24 +21,24 @@ export default function Resume() {
     <div
       style={styles.body}
       className="m-0 flex flex-col h-screen overflow-hidden"
-      id="resume"
-    >
+      id="resume">
       {/* Navigation buttons */}
       <div className="fixed right-6 top-6 w-24 h-12 p-0.5 flex text-white  bg-black bg-opacity-60 rounded-full">
         <NavLink
           className="m-auto bg-accent  bg-opacity-60 rounded-full p-2 pl-3 pr-3 my-auto"
           to="/"
-          download={"Shubhashish_Resume_SDE.pdf"}
-          title="Home"
-        >
+          download={resumeData.person && resumeData.person.downloadFilename}
+          title="Home">
           <FontAwesomeIcon icon={faHouse} />
         </NavLink>
         <a
           className="m-auto  bg-accent bg-opacity-60 rounded-full p-2 pl-3 pr-3"
-          href={process.env.PUBLIC_URL + "/files/Shubhashish_Resume_SDE.pdf"}
-          download={"Shubhashish_Resume_SDE.pdf"}
-          title="Download PDF"
-        >
+          href={
+            process.env.PUBLIC_URL +
+            (resumeData.person && resumeData.person.pdfPath)
+          }
+          download={resumeData.person && resumeData.person.downloadFilename}
+          title="Download PDF">
           <button>
             <FontAwesomeIcon icon={faDownload} />
           </button>
@@ -50,82 +50,79 @@ export default function Resume() {
         <div
           style={styles.pdfPage}
           id="pdfPage"
-          className="shadow-2xl mx-auto p-11"
-        >
+          className="shadow-2xl mx-auto p-11 pb-16">
           {/* Heading */}
           <div className=" text-center">
             <h1 className="text-4xl font-semibold">
-              <a href="https://shubhjena.github.io/" target="blank">
-                Shubhashish Jena
+              <a
+                href={resumeData.person && resumeData.person.website}
+                target="_blank"
+                rel="noreferrer">
+                {resumeData.person && resumeData.person.name}
               </a>
             </h1>
             <p className="text-sm">
-              +91-762-189-0244 |{" "}
-              <a href="mailto:shubh.jena@gmail.com">
-                <u>shubh.jena@gmail.com</u>
+              {resumeData.person && resumeData.person.phone} |{" "}
+              <a
+                href={resumeData.person && `mailto:${resumeData.person.email}`}>
+                <u>{resumeData.person && resumeData.person.email}</u>
               </a>{" "}
               |{" "}
-              <a href="https://www.linkedin.com/in/shubhjena" target="blank">
-                <u>linkedin.com/shubhjena</u>
+              <a
+                href={resumeData.person && resumeData.person.linkedin}
+                target="_blank"
+                rel="noreferrer">
+                <u>{resumeData.person && resumeData.person.linkedinText}</u>
               </a>{" "}
               |{" "}
-              <a href="https://github.com/shubhjena" target="blank">
-                <u>github.com/shubhjena</u>
+              <a
+                href={resumeData.person && resumeData.person.github}
+                target="_blank"
+                rel="noreferrer">
+                <u>{resumeData.person && resumeData.person.githubText}</u>
               </a>
             </p>
           </div>
-          {/* Technical Skills */}
+          {/* Technical Skills (from JSON) */}
           <div className="mt-4">
             <h2 className="text-lg font-semibold border-b border-black">
-              Technical Skills
+              {resumeData.sections && resumeData.sections.technicalSkills
+                ? resumeData.sections.technicalSkills
+                : "Technical Skills"}
             </h2>
             <ul className="list-none ml-6 mt-1">
-              <li>
-                <b className="font-semibold ">Languages:</b>{" "}
-                <span className="text-sm">Java, JavaScript, HTML/CSS</span>
-              </li>
-              <li>
-                <b className="font-semibold">Frameworks:</b>{" "}
-                <span className="text-sm">
-                  Spring, React, ContextAPI, Tailwind CSS, Radix, Material UI
-                </span>
-              </li>
-              <li>
-                <b className="font-semibold">Databases & Tools:</b>{" "}
-                <span className="text-sm">MySQL, PostgreSQL, Hibernate</span>
-              </li>
-              <li>
-                <b className="font-semibold">Developer Tools:</b>{" "}
-                <span className="text-sm">
-                  Vercel, Turborepo, Postman, GitHub, VS Code, IntelliJ
-                </span>
-              </li>
+              {Object.entries(resumeData.technicalSkills).map(
+                ([category, items]) => (
+                  <li key={category} className="mt-0">
+                    <b className="font-semibold">{category}:</b>{" "}
+                    <span className="text-sm">{items.join(", ")}</span>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
-          {/* Projects */}
+          {/* Experience (from JSON) */}
           <div className="mt-3">
             <h2 className="text-lg font-semibold border-b border-black">
-              Projects
+              {resumeData.sections && resumeData.sections.experience
+                ? resumeData.sections.experience
+                : "Experience"}
             </h2>
-            <ul className="list-none  ml-6 mr-2 ">
-              {RESUME_PROJECTS.map((project, index) => (
-                <li key={index} className="mt-2">
-                  <h3 className="text-md font-semibold">
-                    <span>{project.title} </span>
-                    <span className="font-normal italic text-sm">
-                      | {project.technologies.join(", ")}
-                    </span>
-                    <span className="font-normal float-right text-sm">
-                      <a href={project.url} target="blank">
-                        {project.urlText}
-                      </a>
-                    </span>
-                  </h3>
-                  <ul className="text-[13px] list-disc ml-8 space-y-0.5">
-                    <li>Problem Statement: {project.problemStatement}</li>
-                    {project.description.split("#").map((part, i) => (
-                      <li key={i}>{part.trim()}</li>
+            <ul className="list-none ml-6 mr-2 mt-1">
+              {resumeData.experience.map((exp, idx) => (
+                <li key={idx} className="mb-1">
+                  <div className="flex justify-between">
+                    <span className="text-md font-semibold">{exp.title}</span>
+                    <span className="text-sm">{exp.dateRange}</span>
+                  </div>
+                  <p className="flex justify-between mb-1">
+                    <span className="italic text-sm">{exp.company}</span>
+                    <span className="text-sm">{exp.location}</span>
+                  </p>
+                  <ul className="list-disc text-[13px] ml-8 space-y-0.4">
+                    {exp.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
                     ))}
                   </ul>
                 </li>
@@ -133,85 +130,64 @@ export default function Resume() {
             </ul>
           </div>
 
-          {/* Experience */}
+          {/* Projects (from JSON) */}
           <div className="mt-3">
             <h2 className="text-lg font-semibold border-b border-black">
-              Experience
+              {resumeData.sections && resumeData.sections.projects
+                ? resumeData.sections.projects
+                : "Projects"}
             </h2>
-            <ul className="list-none ml-6 mr-2 mt-2">
-              <li>
-                <div>
-                  <h3 className="text-md font-semibold inline-block">
-                    Senior Planning Engineer
+            <ul className="list-none  ml-6 mr-2 ">
+              {resumeData.projects.map((project, index) => (
+                <li key={index} className="mt-2">
+                  <h3 className="text-md font-semibold">
+                    <span>{project.title} </span>
+                    <span className="font-normal italic text-sm">
+                      | {project.technologies.join(", ")}
+                    </span>
+                    <span className="font-normal float-right text-sm">
+                      {project.url ? (
+                        <a href={project.url} target="blank" rel="noreferrer">
+                          {project.urlText || project.url}
+                        </a>
+                      ) : null}
+                    </span>
                   </h3>
-                  <span className="text-sm float-right">
-                    Aug. 2021 -- Jan. 2023
-                  </span>
-                </div>
-                <p>
-                  <span className="italic text-sm">
-                    Larsen & Toubro Ltd. - HPCL Rajasthan Refinery Ltd.
-                  </span>
-                  <span className="float-right text-sm">Barmer, RJ</span>
-                </p>
-                <ul className="list-disc text-[13px] ml-8 space-y-0.5">
-                  <li>
-                    Coordinated cross-functional teams for timely procurement
-                    processes and client billing worth 636 Cr.
-                  </li>
-                  <li>
-                    Used Primavera project management tool for scheduling and
-                    resource management.
-                  </li>
-                  <li>
-                    Analysed weekly & monthly risk mitigation and progress
-                    monitoring reports for corrective actions.
-                  </li>
-                </ul>
-                {/* Add more experience details here */}
-              </li>
-              {/* Add more experiences here */}
+                  <ul className="text-[13px] list-disc ml-8 space-y-0.4">
+                    <li>Problem Statement: {project.problemStatement}</li>
+                    {Array.isArray(project.description)
+                      ? project.description.map((part, i) => (
+                          <li key={i}>{part}</li>
+                        ))
+                      : (project.description || "")
+                          .split("#")
+                          .map((part, i) => <li key={i}>{part.trim()}</li>)}
+                  </ul>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Education */}
+          {/* Education (from JSON) */}
           <div className="mt-3">
             <h2 className="text-lg font-semibold border-b border-black">
-              Education
+              {resumeData.sections && resumeData.sections.education
+                ? resumeData.sections.education
+                : "Education"}
             </h2>
             <ul className="list-none ml-6">
-              <li className="mt-2 mr-2">
-                <h3 className="text-md font-semibold inline-block">
-                  Great Learning
-                </h3>
-                <span className="float-right text-sm">Online</span>
-                <p className="italic text-sm mt-0.5">
-                  <span></span>Coding Bootcamp for PGP SDE
-                  <span className="float-right">Nov. 2022 -- Present</span>
-                </p>
-              </li>
-              <li className="mt-2 mr-2">
-                <h3 className="text-md font-semibold inline-block">
-                  IIT Madras
-                </h3>
-                <span className="float-right text-sm">Chennai, TN</span>
-                <p className="italic text-sm mt-0.5">
-                  <span></span>Master of Technology in Construction Tech. &
-                  Management - CGPA 8.92
-                  <span className="float-right">Aug. 2019 -- June 2021</span>
-                </p>
-              </li>
-              <li className="mt-2 mr-2">
-                <h3 className="text-md font-semibold inline-block">
-                  LD College of Engineering
-                </h3>
-                <span className="float-right text-sm">Ahmedabad, GJ</span>
-                <p className="italic text-sm mt-0.5">
-                  <span></span>Bachelor of Engineering in Civil Engineering -
-                  CGPA 8.45
-                  <span className="float-right">Aug. 2015 -- June 2019</span>
-                </p>
-              </li>
+              {resumeData.education.map((edu, i) => (
+                <li key={i} className="mt-1.5 mr-2">
+                  <h3 className="text-md font-semibold inline-block">
+                    {edu.institution}
+                  </h3>
+                  <span className="float-right text-sm">{edu.location}</span>
+                  <p className="italic text-sm mt-0">
+                    <span>{edu.degree}</span>
+                    <span className="float-right">{edu.dateRange}</span>
+                  </p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

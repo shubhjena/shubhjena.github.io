@@ -1,0 +1,127 @@
+{
+  "person": {
+    "name": "Shubhashish Jena",
+    "phone": "+91-762-189-0244",
+    "email": "shubh.jena@gmail.com",
+    "website": "https://shubhjena.github.io/",
+    "websiteText": "shubhjena.github.io",
+    "linkedin": "https://www.linkedin.com/in/shubhjena",
+    "linkedinText": "linkedin.com/shubhjena",
+    "github": "https://github.com/shubhjena",
+    "githubText": "github.com/shubhjena",
+    "pdfPath": "/files/Shubhashish_Resume_SDE.pdf",
+    "downloadFilename": "Shubhashish_Resume_SDE.pdf"
+  },
+  "sections": {
+    "technicalSkills": "Technical Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education"
+  },
+  "technicalSkills": {
+    "Languages": ["TypeScript", "JavaScript", "Java", "HTML", "CSS"],
+    "Frameworks": [
+      "Angular",
+      "Next.js",
+      "React",
+      ".Net",
+      "Spring",
+      "Tailwind CSS",
+      "Material UI",
+      "Playwright"
+    ],
+    "Databases & Tools": ["MySQL", "PostgreSQL", "Hibernate"],
+    "Developer Tools": [
+      "Vercel",
+      "Nx",
+      "Turborepo",
+      "Postman",
+      "GitHub",
+      "VS Code",
+      "IntelliJ"
+    ]
+  },
+  "experience": [
+    {
+      "title": "Full Stack Developer",
+      "company": "Align Technology - iTero India R&D",
+      "location": "Hyderabad, TG",
+      "dateRange": "Mar. 2024 – Present",
+      "bullets": [
+        "Built full-stack features using Angular, .NET Core, and PostgreSQL.",
+        "Designed and maintained micro-frontends for scalable and modular architecture.",
+        "Developed npm packages and reusable UI components for cross-app consistency.",
+        "Implemented event-driven architecture for decoupled, asynchronous services.",
+        "Wrote unit tests and Playwright automation tests to ensure quality and reliability.",
+        "Contributed to Scrum Agile processes, collaborating on sprints and team planning."
+      ]
+    },
+    {
+      "title": "Senior Planning Engineer",
+      "company": "Larsen & Toubro Ltd. - HPCL Rajasthan Refinery Ltd.",
+      "location": "Barmer, RJ",
+      "dateRange": "Aug. 2021 -- Jan. 2023",
+      "bullets": [
+        "Coordinated cross-functional teams for timely procurement processes and client billing worth 636 Cr.",
+        "Used Primavera project management tool for scheduling and resource management."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "technologies": ["React", "TailwindCSS", "Zustand", "GitHub Pages"],
+      "url": "https://shubhjena.github.io/",
+      "urlText": "/shubhjena.github.io",
+      "problemStatement": "Develop a portfolio website to showcase my skills and projects.",
+      "description": [
+        "Developed a portfolio website with home, projects, and about sections.",
+        "The website showcases my skills, projects, and contact information."
+      ]
+    },
+    {
+      "title": "Community Chat",
+      "technologies": ["Next.js", "Socket.io", "Node.js", "Redis", "Kafka", "Prisma", "PostgreSQL"],
+      "url": "https://github.com/shubhjena/CommunityChat",
+      "urlText": "/github/CommunityChat",
+      "problemStatement": "Build an application to anonymously chat in real-time.",
+      "description": [
+        "Created a ’Community Chat’ web app with Next.js and Node.js, made scalable with Redis and Kafka.",
+        "Users can chat in real-time on a web-based chat interface on any of the predefined topics.",
+        "Data is stored and fetched from a PostgreSQL database using the Prisma ORM tool."
+      ]
+    },
+    {
+      "title": "Quiz Application",
+      "technologies": ["Spring Boot", "Java", "Maven", "PostgreSQL", "REST API"],
+      "url": "https://github.com/shubhjena/Quizapp",
+      "urlText": "/github/Quizapp",
+      "problemStatement": "Develop a quiz app with RESTful API endpoints.",
+      "description": [
+       " Created RESTful API endpoints for quiz creation, submission, and management.",
+       "Quiz questions are maintained in a PostgreSQL database to which questions can be added or deleted.",
+       "Users can generate a quiz with a requested number of questions in any of the given topics."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Great Learning",
+      "location": "Online",
+      "degree": "Coding Bootcamp for PGP SDE",
+      "dateRange": "Nov. 2022 -- Jan. 2024"
+    },
+    {
+      "institution": "IIT Madras",
+      "location": "Chennai, TN",
+      "degree": "Master of Technology in Construction Tech. & Management - CGPA 8.92",
+      "dateRange": "Aug. 2019 -- June 2021"
+    },
+    {
+      "institution": "LD College of Engineering",
+      "location": "Ahmedabad, GJ",
+      "degree": "Bachelor of Engineering in Civil Engineering - CGPA 8.45",
+      "dateRange": "Aug. 2015 -- June 2019"
+    }
+  ]
+}
